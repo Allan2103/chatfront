@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h2>Lista de Mensagens</h2>
+	<div th:unless="${#lists.isEmpty(mensagens)}">
+		<table>
+		    <tr>
+		        <th>dataHora</th>
+		        <th>conteudo</th>
+		        <th>emissor</th>
+		        <th>receptor</th>
+		    </tr>
+		    <tr th:each="mensagem : ${mensagens}">
+		        <td class="align-middle" th:text="${mensagem.dataHora}"></td>
+		        <td class="align-middle" th:text="${mensagem.conteudo}"></td>
+		        <td class="align-middle" th:text="${mensagem.emissor}"></td>
+		        <td class="align-middle" th:text="${mensagem.receptor}"></td>
+		    </tr>
+		</table>
+	</div>
+</body>
+</html>
